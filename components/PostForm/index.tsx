@@ -8,7 +8,13 @@ import { serverTimeStamp } from "lib/firebase";
 import styles from "styles/Admin.module.css";
 
 const PostForm = ({ defaultValues, postRef, preview }) => {
-  const { register, handleSubmit, reset, watch } = useForm({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors, isDirty, isValid },
+  } = useForm({
     defaultValues,
     mode: "onChange",
   });
@@ -34,7 +40,18 @@ const PostForm = ({ defaultValues, postRef, preview }) => {
       )}
 
       <div className={preview ? styles.hidden : styles.controls}>
-        <textarea name="content" {...register("content")}></textarea>
+        <textarea
+          name="content"
+          {...register("content", {
+            maxLength: { value: 20000, message: "Content is too long" },
+            minLength: { value: 10, message: "Content is too short" },
+            required: { value: true, message: "Content is required" },
+          })}
+        ></textarea>
+
+        {errors.content && (
+          <p className="text-danger"> ❌ {errors.content.message}</p>
+        )}
 
         <fieldset>
           <input
@@ -47,7 +64,11 @@ const PostForm = ({ defaultValues, postRef, preview }) => {
           <label htmlFor="published">Published</label>
         </fieldset>
 
-        <button type="submit" className="btn-green">
+        <button
+          type="submit"
+          className="btn-green"
+          disabled={!isDirty || !isValid}
+        >
           Save changes
         </button>
       </div>
