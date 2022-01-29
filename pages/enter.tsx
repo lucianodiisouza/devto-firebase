@@ -1,4 +1,4 @@
-import { FormEvent, useCallback, useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
 import debounce from "lodash.debounce";
 import { UserContext } from "contexts";
 import { auth, googleAuthProvider, firestore } from "lib/firebase";
@@ -60,17 +60,14 @@ const UserNameForm = () => {
     }
   };
 
-  const checkUsername = useCallback(
-    debounce(async (username) => {
-      if (username.length >= 3) {
-        const ref = firestore.doc(`usernames/${username}`);
-        const { exists } = await ref.get();
-        setIsValid(!exists);
-        setLoading(false);
-      }
-    }, 500),
-    []
-  );
+  const checkUsername = debounce(async (username: string) => {
+    if (username.length >= 3) {
+      const ref = firestore.doc(`usernames/${username}`);
+      const { exists } = await ref.get();
+      setIsValid(!exists);
+      setLoading(false);
+    }
+  }, 500);
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
