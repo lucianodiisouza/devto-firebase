@@ -9,3 +9,5 @@ export { default as SignOutButton } from "./SignOutButton";
 export { default as NewUsernameForm } from "./NewUsernameForm";
 export { default as UserFormMessage } from "./UserFormMessage";
 export { default as AuthButtonGroup } from "./AuthButtonGroup";
+export { default as CreateNewPost } from "./CreateNewPost";
+export { default as PostList } from "./PostList";
