@@ -11,3 +11,5 @@ export { default as UserFormMessage } from "./UserFormMessage";
 export { default as AuthButtonGroup } from "./AuthButtonGroup";
 export { default as CreateNewPost } from "./CreateNewPost";
 export { default as PostList } from "./PostList";
+export { default as PostForm } from "./PostForm";
+export { default as PostManager } from "./PostManager";
