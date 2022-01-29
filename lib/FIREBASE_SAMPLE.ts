@@ -1,3 +1,8 @@
+/**
+ * Rename this file to firebase.ts
+ *  paste your firebase config keys at firebaseConfig const
+ */
+
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
@@ -41,9 +46,3 @@ export function postToJson(doc) {
     updatedAt: data.updatedAt.toMillis(),
   };
 }
-
-
-
-/** Rename this file to firebase.ts
- *  paste your firebase config keys at firebaseConfig const
- */
