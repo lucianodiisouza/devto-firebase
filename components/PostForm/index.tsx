@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import ReactMarkdown from "react-markdown";
 
 import { serverTimeStamp } from "lib/firebase";
+import { ImageUploader } from "components";
 
 import styles from "styles/Admin.module.css";
 
@@ -40,6 +41,7 @@ const PostForm = ({ defaultValues, postRef, preview }) => {
       )}
 
       <div className={preview ? styles.hidden : styles.controls}>
+        <ImageUploader />
         <textarea
           name="content"
           {...register("content", {
