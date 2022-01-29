@@ -1,6 +1,6 @@
 import { useDocumentData } from "react-firebase-hooks/firestore";
 
-import { PostContent } from "components";
+import { PostContent, MetaTags } from "components";
 import { firestore, getUserWithUsername, postToJson } from "lib/firebase";
 
 import styles from "styles/Home.module.css";
@@ -11,17 +11,20 @@ export default function PostPage(props) {
   const post = realtimePost || props.post;
 
   return (
-    <main className={styles.container}>
-      <section>
-        <PostContent post={post} />
-      </section>
+    <>
+      <MetaTags title={post?.title} />
+      <main className={styles.container}>
+        <section>
+          <PostContent post={post} />
+        </section>
 
-      <aside className="card">
-        <p>
-          <strong>{post.heartCount || 0} ❤️</strong>
-        </p>
-      </aside>
-    </main>
+        <aside className="card">
+          <p>
+            <strong>{post.heartCount || 0} ❤️</strong>
+          </p>
+        </aside>
+      </main>
+    </>
   );
 }
 
