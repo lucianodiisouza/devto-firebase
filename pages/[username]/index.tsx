@@ -1,7 +1,7 @@
 import { UserProfile, PostFeed } from "components";
-import { getUserWithUsername, postToJON } from "lib/firebase";
+import { getUserWithUsername, postToJson } from "lib/firebase";
 
-export default function UserProfilePage({ user, posts}) {
+export default function UserProfilePage({ user, posts }) {
   return (
     <main>
       <UserProfile user={user} />
@@ -25,7 +25,7 @@ export async function getServerSideProps({ query }) {
       .where("published", "==", true)
       .orderBy("createdAt", "desc")
       .limit(5);
-    posts = (await postQuery.get()).docs.map(postToJON);
+    posts = (await postQuery.get()).docs.map(postToJson);
   }
 
   return {
