@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 const UserProfile = ({ user }) => {
-  console.log(user);
   return (
     <div className="box-center">
       <img
