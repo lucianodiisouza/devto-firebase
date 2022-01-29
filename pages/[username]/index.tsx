@@ -26,6 +26,10 @@ export async function getServerSideProps({ query }) {
       .orderBy("createdAt", "desc")
       .limit(5);
     posts = (await postQuery.get()).docs.map(postToJson);
+  } else {
+    return {
+      notFound: true,
+    };
   }
 
   return {
