@@ -14,3 +14,4 @@ export { default as PostList } from "./PostList";
 export { default as PostForm } from "./PostForm";
 export { default as PostManager } from "./PostManager";
 export { default as ImageUploader } from "./ImageUploader";
+export { default as HeartButton } from "./HeartButton";

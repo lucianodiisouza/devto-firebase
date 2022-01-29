@@ -1,12 +1,15 @@
-import { UserProfile, PostFeed } from "components";
+import { UserProfile, PostFeed, MetaTags } from "components";
 import { getUserWithUsername, postToJson } from "lib/firebase";
 
-export default function UserProfilePage({ user, posts }) {
+export default function UserProfilePage({ user, posts, username }) {
   return (
-    <main>
-      <UserProfile user={user} />
-      <PostFeed posts={posts} />
-    </main>
+    <>
+      <MetaTags title={`See all ${username}'s posts`} />
+      <main>
+        <UserProfile user={user} />
+        <PostFeed posts={posts} />
+      </main>
+    </>
   );
 }
 
@@ -36,6 +39,7 @@ export async function getServerSideProps({ query }) {
     props: {
       user,
       posts,
+      username,
     },
   };
 }

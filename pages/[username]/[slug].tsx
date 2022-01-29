@@ -1,6 +1,6 @@
 import { useDocumentData } from "react-firebase-hooks/firestore";
 
-import { PostContent, MetaTags } from "components";
+import { PostContent, MetaTags, AuthCheck, HeartButton } from "components";
 import { firestore, getUserWithUsername, postToJson } from "lib/firebase";
 
 import styles from "styles/Home.module.css";
@@ -22,6 +22,10 @@ export default function PostPage(props) {
           <p>
             <strong>{post.heartCount || 0} ❤️</strong>
           </p>
+
+          <AuthCheck>
+            <HeartButton postRef={postRef} />
+          </AuthCheck>
         </aside>
       </main>
     </>

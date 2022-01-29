@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { Loader, PostFeed } from "components";
+import { Loader, MetaTags, PostFeed } from "components";
 import { firestore, fromMillis, postToJson } from "lib/firebase";
 
-const LIMIT = 1;
+const LIMIT = 5;
 
 export default function Home(props) {
   const [posts, setPosts] = useState(props.posts);
@@ -39,15 +39,18 @@ export default function Home(props) {
   };
 
   return (
-    <main>
-      <PostFeed posts={posts} />
-      {posts.length === 0 && "Nothing to see yet 😅"}
-      {!loading && !postsEnd && (
-        <button onClick={getMorePosts}>Load more</button>
-      )}
-      <Loader show={loading} />
-      {postsEnd && "That's all folks!"}
-    </main>
+    <>
+      <MetaTags title="DevTo Clone w/ NextJS+Firebase" />
+      <main>
+        <PostFeed posts={posts} />
+        {posts.length === 0 && "Nothing to see yet 😅"}
+        {!loading && !postsEnd && (
+          <button onClick={getMorePosts}>Load more</button>
+        )}
+        <Loader show={loading} />
+        {postsEnd && "That's all folks!"}
+      </main>
+    </>
   );
 }
 
