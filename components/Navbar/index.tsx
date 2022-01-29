@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { useContext } from "react";
 import { UserContext } from "contexts";
+import { SignOutButton } from "components";
 
 export default function Navbar() {
   const { user, username } = useContext(UserContext);
@@ -21,6 +22,7 @@ export default function Navbar() {
               <Link href="/admin" passHref>
                 <button className="btn-blue">Write Posts</button>
               </Link>
+              <SignOutButton />
               <Link href={`/${username}`} passHref>
                 <img
                   width={48}

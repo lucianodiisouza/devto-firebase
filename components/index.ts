@@ -4,3 +4,8 @@ export { default as UserProfile } from "./UserProfile";
 export { default as PostFeed } from "./PostFeed";
 export { default as PostContent } from "./PostContent";
 export { default as MetaTags } from "./MetaTags";
+export { default as AuthCheck } from "./AuthCheck";
+export { default as SignOutButton } from "./SignOutButton";
+export { default as NewUsernameForm } from "./NewUsernameForm";
+export { default as UserFormMessage } from "./UserFormMessage";
+export { default as AuthButtonGroup } from "./AuthButtonGroup";
