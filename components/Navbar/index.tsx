@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Navbar() {
   const user = {
-    haveUser: true,
+    haveUser: false,
     photoURL: "https://i.pravatar.cc/100",
   };
-  const username = true;
+  const username = false;
 
   return (
     <nav className="navbar">
