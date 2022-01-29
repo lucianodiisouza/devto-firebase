@@ -36,4 +36,4 @@ yarn-error.log*
 
 # firebase config env
 /lib/firebase.ts
-firebase.ts
+lib/firebase.ts
