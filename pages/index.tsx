@@ -1,17 +1,9 @@
-import Link from "next/link";
+import { Loader } from "components";
 
 export default function Home() {
   return (
     <div>
-      <Link
-        prefetch={false}
-        href={{
-          pathname: "/[username]",
-          query: { username: "lucianodiisouza" },
-        }}
-      >
-        Item
-      </Link>
+      <Loader show />
     </div>
   );
 }
