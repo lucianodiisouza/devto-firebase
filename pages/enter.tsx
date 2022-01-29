@@ -1,7 +1,7 @@
-import { UserContext } from "contexts";
-import { signInWithPopup } from "firebase/auth";
-import { googleAuthProvider, auth } from "lib/firebase";
 import { useContext } from "react";
+
+import { UserContext } from "contexts";
+import { auth, googleAuthProvider } from "lib/firebase";
 
 export default function Enter({}) {
   const { user, username } = useContext(UserContext);
@@ -22,8 +22,9 @@ export default function Enter({}) {
 }
 
 const SignInButton = () => {
-  const signInWithGoogle = async () => {
-    signInWithPopup(auth, googleAuthProvider)
+  const signInWithGoogle = () => {
+    auth
+      .signInWithPopup(googleAuthProvider)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };

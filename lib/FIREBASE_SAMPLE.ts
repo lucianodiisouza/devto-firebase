@@ -1,7 +1,7 @@
-import { getFirestore } from "firebase/firestore";
-import { getApps, getApp, initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
-import { getStorage } from "firebase/storage";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "XXXXXXXXXX",
@@ -13,13 +13,13 @@ const firebaseConfig = {
   measurementId: "XXXXXXXXXX",
 };
 
-const firebase = getApps().length ? getApp() : initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
-export const auth = getAuth(firebase);
-export const googleAuthProvider = new GoogleAuthProvider();
-
-export const firestore = getFirestore(firebase);
-export const storage = getStorage(firebase);
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+export const storage = firebase.storage();
 
 /** Rename this file to firebase.ts
  *  paste your firebase config keys at firebaseConfig const
