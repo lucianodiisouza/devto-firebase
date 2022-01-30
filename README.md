@@ -1,4 +1,4 @@
-# DevTo clonex
+# DevTo clone
 This is a educational purpose only small clone of DevTo website (dev.to) using firebase (BaaS) as Backend.
 
 ## screenshots
