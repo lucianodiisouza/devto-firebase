@@ -25,7 +25,8 @@ you can access the production version using `https://devto-firebase-deploy.verce
 - 👑 we are using `typescript` here!
 
 ## can i run it on localhost machine? 
-The short answer: `yes`
+The short answer: `yes` <br />
+
 The long answer: 
 * clone the repo
 * install dependencies typing `yarn` on terminal
