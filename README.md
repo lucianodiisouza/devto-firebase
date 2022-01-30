@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DevTo clonex
+This is a educational purpose only small clone of DevTo website (dev.to) using firebase (BaaS) as Backend.
 
-## Getting Started
+## screenshots
+![screenshot recorded](https://github.com/lucianodiisouza/devto-firebase/blob/main/public/screen_record.gif?raw=true)
 
-First, run the development server:
+## you can: 
+- authenticate a user using a Google Account
+- create posts
+- read posts
+- heart / unheart posts
+- use MD (markdown) to create posts with rich text content
+- upload image files to use inside a post
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## production version
+you can access the production version using `https://devto-firebase-deploy.vercel.app/`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## stack
+- nextJS
+- react-hook-form
+- firebase
+- lodash (kebabCase and debounce)
+- react-hot-toast
+- react-markdown
+- 👑 we are using `typescript` here!
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## can i run it on localhost machine? 
+The short answer: `yes`
+The long answer: 
+* clone the repo
+* install dependencies typing `yarn` on terminal
+* rename `FIREBASE_SAMPLE.ts` to `firebase.ts`
+* replace the `firebaseConfig` variables with the your own firebase project.
+* run the project typing `yarn dev` on terminal
+* open `localhost:3000` and enjoy it!
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## I want to contribute, what i can do?
+Feel free to send a pull-request with your ideas.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+enjoy =)
